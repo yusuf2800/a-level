@@ -13,7 +13,7 @@ const Page = () => {
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious();
+    const previous: number = scrollY.getPrevious() ?? 0;
 
     if (latest > previous && latest > 90) {
       setHidden(true);
